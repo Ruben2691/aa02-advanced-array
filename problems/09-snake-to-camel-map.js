@@ -8,17 +8,21 @@ Solve this using `array.map()`.
 
 Examples:
 
-console.log(snakeToCamel('snakes_go_hiss')); // 'SnakesGoHiss'
-console.log(snakeToCamel('say_hello_world')); // 'SayHelloWorld'
-console.log(snakeToCamel('app_academy_is_cool')); // 'AppAcademyIsCool'
-console.log(snakeToCamel('APp_ACADEMY_iS_cOol')); // 'AppAcademyIsCool'
+
 
 */
 
 function snakeToCamel(str) {
-    // Your code here 
+    // Your code here
+    let words = str.toLowerCase().split('_')
+    // console.log(words)
+    return words.map((word) => word[0].toUpperCase().concat(word.slice(1)) ).join('')
 }
 
+console.log(snakeToCamel('snakes_go_hiss')); // 'SnakesGoHiss'
+console.log(snakeToCamel('say_hello_world')); // 'SayHelloWorld'
+console.log(snakeToCamel('app_academy_is_cool')); // 'AppAcademyIsCool'
+console.log(snakeToCamel('APp_ACADEMY_iS_cOol')); // 'AppAcademyIsCool'
 /**************DO NOT MODIFY ANYTHING UNDER THIS  LINE*****************/
 
 try {
