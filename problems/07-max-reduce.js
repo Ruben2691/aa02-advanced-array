@@ -9,15 +9,22 @@ Solve this using Array's `reduce()` method.
 
 Examples:
 
-console.log(maxWithReduce([4, 6, 3, 5, 42, 4])); // 42
-console.log(maxWithReduce([-2, -3, -7, 3])); // 3
+
 
 */
 
 let maxWithReduce = function(nums) {
-    // Your code here 
+    return nums.reduce((acc, currVal) => {
+      if(acc > currVal){
+        return acc
+      }else{
+        return currVal
+      }
+    })
 };
 
+console.log(maxWithReduce([4, 6, 3, 5, 42, 4])); // 42
+console.log(maxWithReduce([-2, -3, -7, 3])); // 3
 /**************DO NOT MODIFY ANYTHING UNDER THIS  LINE*****************/
 
 try {
