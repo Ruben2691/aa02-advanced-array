@@ -7,15 +7,18 @@ Solve this using Array's `map()` method.
 
 Examples:
 
-console.log(yeller(['hello', 'world'])); // [ 'HELLO!', 'WORLD!' ]
-console.log(yeller(['kiwi', 'orange', 'mango'])); // [ 'KIWI!', 'ORANGE!', 'MANGO!' ]
+
 
 */
 
 let yeller = function(words) {
-  // Your code here 
+  return words.map((word) => {
+    return word.toUpperCase() + '!'
+  })
 };
 
+console.log(yeller(['hello', 'world'])); // [ 'HELLO!', 'WORLD!' ]
+console.log(yeller(['kiwi', 'orange', 'mango'])); // [ 'KIWI!', 'ORANGE!', 'MANGO!' ]
 /**************DO NOT MODIFY ANYTHING UNDER THIS  LINE*****************/
 
 try {
