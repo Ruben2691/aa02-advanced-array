@@ -8,19 +8,31 @@ methods.
 
 Examples:
 
+
+*/
+
+let hasThreeVowels = function(string) {
+    // Your code here
+    let count = 1
+    let vowel = "AEIOUaeiou"
+    let words = string.split("")
+    let vArr = words.filter((letter) => {
+        if(vowel.includes(letter)) return letter
+    })
+    vArr.reduce((v1,v2) => {
+        if(v1 !== v2 ) count++
+    })
+    if(count >= 3 ) return true
+    return false
+};
+
+
 console.log(hasThreeVowels('delicious'));       //  true
 console.log(hasThreeVowels('bootcamp prep'));   //  true
 console.log(hasThreeVowels('bootcamp'));        //  false
 console.log(hasThreeVowels('dog'));             //  false
 console.log(hasThreeVowels('go home'));         //  false
-
-*/
-
-let hasThreeVowels = function(string) {
-    // Your code here 
-};
-
-// Your code here 
+// Your code here
 
 /**************DO NOT MODIFY ANYTHING UNDER THIS  LINE*****************/
 
