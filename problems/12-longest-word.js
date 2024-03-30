@@ -9,17 +9,31 @@ methods.
 
 Examples:
 
-console.log(longestWord('where did everyone go')); // 'everyone'
-console.log(longestWord('prefer simplicity over complexity')); // 'simplicity'
-console.log(longestWord('')); // ''
+
 
 */
 
-let longestWord = function(sentence) {
-    // Your code here 
-};
+// let longestWord = function(sentence) {
+//    let words = sentence.split(' ')
+//    return words.reduce((word, word1) => {
+//         if(word.length > word1.length) return word
+//         if(word.length < word1.length) return word1
+//         if(word.length === word1.length) return word
+//    })
+// };
 
-// Your code here 
+let longestWord = function(sentence) {
+    let words = sentence.split(' ')
+    let longest = ''
+    words.forEach((word) => {
+        if(word.length > longest.length) longest = word
+    })
+    return longest
+ };
+
+console.log(longestWord('where did everyone go')); // 'everyone'
+console.log(longestWord('prefer simplicity over complexity')); // 'simplicity'
+console.log(longestWord('')); // ''
 
 /**************DO NOT MODIFY ANYTHING UNDER THIS  LINE*****************/
 
