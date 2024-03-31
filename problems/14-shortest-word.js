@@ -8,17 +8,41 @@ methods.
 
 Examples:
 
+
+
+*/
+
+// let shortestWord = function(sentence) {
+//   let words = sentence.split(' ')
+//   return words.reduce((word, word1) => {
+//     if(word1.length > word.length) {
+//       return word
+//     }else{
+//       return word1
+//     }
+//   })
+// };
+
+// let shortestWord = function(sentence) {
+//   let words = sentence.split(' ')
+//   let word = words[0]
+//   words.filter((ele) => ele.length <= word.length ? word = ele : false)
+//   return word
+// };
+
+let shortestWord = function(sentence) {
+  let words = sentence.split(' ')
+  let word = words[0]
+  words.filter((ele) => {
+    if(ele.length <= word.length ) word = ele
+  })
+  return word
+};
+
 console.log(shortestWord('what a wonderful life'));     // 'a'
 console.log(shortestWord('the quick brown fox jumps')); // 'fox'
 console.log(shortestWord('do what you enjoy'));         // 'do'
 
-*/
-
-let shortestWord = function(sentence) {
-  // Your code here 
-};
-
-// Your code here 
 
 /**************DO NOT MODIFY ANYTHING UNDER THIS  LINE*****************/
 
