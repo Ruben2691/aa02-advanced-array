@@ -12,18 +12,35 @@ methods.
 
 Examples:
 
-console.log(choosePrimes([36, 48, 9, 13, 19])); // [ 13, 19 ]
-console.log(choosePrimes([5, 6, 4, 11, 2017])); // [ 5, 11, 2017 ]
+
 
 */
 
 let isPrime = function(num) {
-    // Your code here 
+    // Your code here
+    if (num < 2) return false
+    if (num === 2) return true
+    if(num % 2 === 0) return false
+
+    for(let i = 3 ; i < num; i++){
+     if(num % i === 0) return false
+    }
+    
+    return true
+
 }
 
 let choosePrimes = function(nums) {
-    // Your code here 
+    // Your code here
+    let array = []
+     nums.filter((ele) => {
+        if(isPrime(ele) === true) array.push(ele)
+
+     })
+     return array
 }
+console.log(choosePrimes([36, 48, 9, 13, 19])); // [ 13, 19 ]
+console.log(choosePrimes([5, 6, 4, 11, 2017])); // [ 5, 11, 2017 ]
 
 // alternative solution using Array.filter
 // let choosePrimes = function(nums) {
