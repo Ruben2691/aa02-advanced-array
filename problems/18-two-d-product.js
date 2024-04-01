@@ -9,6 +9,16 @@ methods.
 Examples:
 
 
+
+*/
+
+let twoDimensionalProduct = function(arr) {
+   let fullArr = arr.flat(Infinity)
+   return fullArr.reduce((num, num2) => num * num2)
+};
+
+
+
 let arr1 = [
   [6, 4],
   [5],
@@ -21,12 +31,6 @@ let arr2 = [
   [2]
 ];
 console.log(twoDimensionalProduct(arr2)); // 88
-*/
-
-let twoDimensionalProduct = function(arr) {
-    // Your code here 
-};
-
 /**************DO NOT MODIFY ANYTHING UNDER THIS  LINE*****************/
 
 try {
