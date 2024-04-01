@@ -21,22 +21,58 @@ Can you reduce the problem into helper functions?
 
 Examples:
 
-console.log(repeatingTranslate("we like to go running fast"));  // "we likelike to go runninging fastast"
-console.log(repeatingTranslate("he cannot find the trash"));    // "he cannotot findind thethe trashash"
-console.log(repeatingTranslate("pasta is my favorite dish"));   // "pastapasta is my favoritefavorite dishish"
-console.log(repeatingTranslate("her family flew to France"));   // "herer familyily flewew to FranceFrance"
+
 
 */
 
 let repeatingTranslate = function(sentence) {
-    // Your code here 
+    // Your code here
+    let words = sentence.split(' ')
+   return words.map((word) =>{
+        if(word.length < 3 ){
+            return word
+
+        }else if(word.length >= 3){
+           return checker(word)
+
+        }
+    }).join(' ')
+
 };
 
+let checker = function(word){
+    let vowels = 'aeiouAEIOU'
+    if(vowels.includes(word[word.length -1])){
+      return  repeatWord(word)
+    }else{
+       return reverb(word , vowels)
+    }
+}
 
-let translateWord = function(word) {
-    // Your code here 
+let repeatWord = function(word) {
+    // Your code here
+ return word.concat(word)
+
 };
+let reverb = function(word, vowels){
+ let end = []
 
+ for(let i = word.length -1; i >= 0; i--){
+    let letter = word[i]
+    end.push(letter)
+    if(vowels.includes(letter)){
+        
+        break;
+
+     }
+ }
+ return word.concat(end.reverse().join(''))
+}
+
+console.log(repeatingTranslate("we like to go running fast"));  // "we likelike to go runninging fastast"
+console.log(repeatingTranslate("he cannot find the trash"));    // "he cannotot findind thethe trashash"
+console.log(repeatingTranslate("pasta is my favorite dish"));   // "pastapasta is my favoritefavorite dishish"
+console.log(repeatingTranslate("her family flew to France"));   // "herer familyily flewew to FranceFrance"
 /**************DO NOT MODIFY ANYTHING UNDER THIS  LINE*****************/
 
 try {
